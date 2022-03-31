@@ -1,0 +1,43 @@
+precision mediump float;
+uniform sampler2D screentexture;
+uniform float glow;
+uniform int rendermode;
+varying vec2 texcoords;
+void main() {
+    float x, y, i, j, angle;
+    int one = 0, two = 0, three = 0, four = 0;
+    vec4 v;
+    gl_FragColor = texture2D(screentexture, texcoords);
+    for (angle = 0.0; angle < 1.571; angle += 0.3) {
+        x = sin(angle) * 0.01;
+        y = cos(angle) * 0.01;
+        for (i = 0.002; i < x; i += 0.002) {
+            for (j = 0.002; j < y; j += 0.002) {
+                v = texture2D(screentexture, texcoords + vec2(i, j));
+                gl_FragColor = max(gl_FragColor, v);
+                if (v.x > 0.0 || v.y > 0.0 || v.z > 0.0) {
+                    one++;
+                }
+                v = texture2D(screentexture, texcoords + vec2(i, -j));
+                gl_FragColor = max(gl_FragColor, v);
+                if (v.x > 0.0 || v.y > 0.0 || v.z > 0.0) {
+                    two++;
+                }
+                v = texture2D(screentexture, texcoords + vec2(-i, -j));
+                gl_FragColor = max(gl_FragColor, v);
+                if (v.x > 0.0 || v.y > 0.0 || v.z > 0.0) {
+                    three++;
+                }
+                v = texture2D(screentexture, texcoords + vec2(-i, j));
+                gl_FragColor = max(gl_FragColor, v);
+                if (v.x > 0.0 || v.y > 0.0 || v.z > 0.0) {
+                    four++;
+                }
+            }
+        }
+    }
+    gl_FragColor *= glow;
+    if (rendermode == 1 && one * two * three * four > 0) {
+        gl_FragColor = vec4(0.0, 0.0, 0.0, 1.0);
+    }
+}

@@ -1,0 +1,189 @@
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <ListPreference
+        android:key="@string/pref_key_predefined"
+        android:title="@string/pref_title_predefined"
+        android:entries="@array/pref_predefined_list_titles"
+        android:entryValues="@array/pref_predefined_list_values"
+        android:negativeButtonText="@null"
+        android:positiveButtonText="@null"
+        android:persistent="false"/>
+    <PreferenceCategory android:title="@string/pref_title_graphics">
+        <CheckBoxPreference
+            android:key="@string/pref_key_fps"
+            android:title="@string/pref_title_fps" />
+        <com.prozium.particlesfree.ColorPreference
+            android:key="@string/pref_key_cold"
+            android:title="@string/pref_title_cold"
+            android:widgetLayout="@layout/color"/>
+        <com.prozium.particlesfree.ColorPreference
+            android:key="@string/pref_key_warm"
+            android:title="@string/pref_title_warm"
+            android:widgetLayout="@layout/color"/>
+        <ListPreference
+            android:key="@string/pref_key_render"
+            android:title="@string/pref_title_render"
+            android:entries="@array/pref_render_list_titles"
+            android:entryValues="@array/pref_render_list_values"
+            android:negativeButtonText="@null"
+            android:positiveButtonText="@null" />
+        <com.prozium.particlesfree.SeekBarPreference
+            android:max="100"
+            android:key="@string/pref_key_trail"
+            android:title="@string/pref_title_trail" />
+        <com.prozium.particlesfree.SeekBarPreference
+            android:max="100"
+            android:key="@string/pref_key_offset"
+            android:title="@string/pref_title_offset" />
+        <com.prozium.particlesfree.SeekBarPreference
+            android:max="5"
+            android:key="@string/pref_key_glow"
+            android:title="@string/pref_title_glow" />
+        <com.prozium.particlesfree.SeekBarPreference
+            android:max="30"
+            android:key="@string/pref_key_scale_factor"
+            android:title="@string/pref_title_scale_factor" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/pref_title_physics">
+        <CheckBoxPreference
+            android:key="@string/pref_key_motion"
+            android:title="@string/pref_title_motion" />
+        <!--<CheckBoxPreference
+            android:key="@string/pref_key_solid"
+            android:title="@string/pref_title_solid" />
+        <CheckBoxPreference
+            android:key="@string/pref_key_bounce"
+            android:title="@string/pref_title_bounce" />
+        <com.prozium.particlesfree.SeekBarPreference
+            android:max="100"
+            android:key="@string/pref_key_radius"
+            android:title="@string/pref_title_radius" />-->
+        <com.prozium.particlesfree.SeekBarPreference
+            android:max="33"
+            android:key="@string/pref_key_speed"
+            android:title="@string/pref_title_speed" />
+        <com.prozium.particlesfree.SeekBarPreference
+            android:max="30"
+            android:key="@string/pref_key_attenuation"
+            android:title="@string/pref_title_attenuation" />
+        <com.prozium.particlesfree.SeekBarPreference
+            android:max="100"
+            android:key="@string/pref_key_total1"
+            android:title="@string/pref_title_total1" />
+        <com.prozium.particlesfree.SeekBarPreference
+            android:max="100"
+            android:key="@string/pref_key_total2"
+            android:title="@string/pref_title_total2" />
+    </PreferenceCategory>
+<!--
+    <PreferenceCategory android:title="@string/pref_title_type1_self">
+        <ListPreference
+            android:key="@string/pref_key_formula_self1"
+            android:defaultValue="0"
+            android:title="@string/pref_title_formula"
+            android:entries="@array/pref_formula_list_titles"
+            android:entryValues="@array/pref_formula_list_values"
+            android:negativeButtonText="@null"
+            android:positiveButtonText="@null" />
+        <com.prozium.particlesfree.SeekBarPreference
+            android:max="100"
+            android:key="@string/pref_key_gauss_self1"
+            android:title="@string/pref_title_gauss" />
+        <com.prozium.particlesfree.SeekBarPreference
+            android:max="100"
+            android:key="@string/pref_key_force_self1"
+            android:title="@string/pref_title_force" />
+        <com.prozium.particlesfree.SeekBarPreference
+            android:max="500"
+            android:key="@string/pref_key_horizon_self1"
+            android:title="@string/pref_title_horizon" />
+        <com.prozium.particlesfree.SeekBarPreference
+            android:max="19"
+            android:key="@string/pref_key_gravity_self1"
+            android:title="@string/pref_title_gravity" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/pref_title_type1_others">
+        <ListPreference
+            android:key="@string/pref_key_formula_others2"
+            android:defaultValue="0"
+            android:title="@string/pref_title_formula"
+            android:entries="@array/pref_formula_list_titles"
+            android:entryValues="@array/pref_formula_list_values"
+            android:negativeButtonText="@null"
+            android:positiveButtonText="@null" />
+        <com.prozium.particlesfree.SeekBarPreference
+            android:max="100"
+            android:key="@string/pref_key_gauss_others2"
+            android:title="@string/pref_title_gauss" />
+        <com.prozium.particlesfree.SeekBarPreference
+            android:max="100"
+            android:key="@string/pref_key_force_others2"
+            android:title="@string/pref_title_force" />
+        <com.prozium.particlesfree.SeekBarPreference
+            android:max="500"
+            android:key="@string/pref_key_horizon_others2"
+            android:title="@string/pref_title_horizon" />
+        <com.prozium.particlesfree.SeekBarPreference
+            android:max="19"
+            android:key="@string/pref_key_gravity_others2"
+            android:title="@string/pref_title_gravity" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/pref_title_type2_others">
+        <ListPreference
+            android:key="@string/pref_key_formula_others1"
+            android:defaultValue="0"
+            android:title="@string/pref_title_formula"
+            android:entries="@array/pref_formula_list_titles"
+            android:entryValues="@array/pref_formula_list_values"
+            android:negativeButtonText="@null"
+            android:positiveButtonText="@null" />
+        <com.prozium.particlesfree.SeekBarPreference
+            android:max="100"
+            android:key="@string/pref_key_gauss_others1"
+            android:title="@string/pref_title_gauss" />
+        <com.prozium.particlesfree.SeekBarPreference
+            android:max="100"
+            android:key="@string/pref_key_force_others1"
+            android:title="@string/pref_title_force" />
+        <com.prozium.particlesfree.SeekBarPreference
+            android:max="500"
+            android:key="@string/pref_key_horizon_others1"
+            android:title="@string/pref_title_horizon" />
+        <com.prozium.particlesfree.SeekBarPreference
+            android:max="19"
+            android:key="@string/pref_key_gravity_others1"
+            android:title="@string/pref_title_gravity" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/pref_title_type2_self">
+        <ListPreference
+            android:key="@string/pref_key_formula_self2"
+            android:defaultValue="0"
+            android:title="@string/pref_title_formula"
+            android:entries="@array/pref_formula_list_titles"
+            android:entryValues="@array/pref_formula_list_values"
+            android:negativeButtonText="@null"
+            android:positiveButtonText="@null" />
+        <com.prozium.particlesfree.SeekBarPreference
+            android:max="100"
+            android:key="@string/pref_key_gauss_self2"
+            android:title="@string/pref_title_gauss" />
+        <com.prozium.particlesfree.SeekBarPreference
+            android:max="100"
+            android:key="@string/pref_key_force_self2"
+            android:title="@string/pref_title_force" />
+        <com.prozium.particlesfree.SeekBarPreference
+            android:max="500"
+            android:key="@string/pref_key_horizon_self2"
+            android:title="@string/pref_title_horizon" />
+        <com.prozium.particlesfree.SeekBarPreference
+            android:max="19"
+            android:key="@string/pref_key_gravity_self2"
+            android:title="@string/pref_title_gravity" />
+    </PreferenceCategory>
+-->
+    <com.prozium.particlesfree.AboutPreference
+        android:title="@string/pref_title_about"
+        android:dialogTitle="@string/pref_title_about"
+        android:dialogMessage="@string/pref_message_about"
+        android:negativeButtonText="@null"
+        android:positiveButtonText="@null"/>
+</PreferenceScreen>

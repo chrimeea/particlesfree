@@ -1,0 +1,15 @@
+precision mediump float;
+uniform sampler2D screentexture;
+uniform float offset, glow;
+varying vec2 texcoords;
+void main() {
+     gl_FragColor = glow * (texture2D(screentexture, texcoords + vec2(-1.0, 1.0) * offset) / 16.0
+            + texture2D(screentexture, texcoords + vec2(0.0, 1.0) * offset) / 8.0
+            + texture2D(screentexture, texcoords + vec2(1.0, 1.0) * offset) / 16.0
+            + texture2D(screentexture, texcoords + vec2(-1.0, 0.0) * offset) / 8.0
+            + texture2D(screentexture, texcoords) / 4.0
+            + texture2D(screentexture, texcoords + vec2(1.0, 0.0) * offset) / 8.0
+            + texture2D(screentexture, texcoords + vec2(-1.0, -1.0) * offset) / 16.0
+            + texture2D(screentexture, texcoords + vec2(0.0, -1.0) * offset) / 8.0
+            + texture2D(screentexture, texcoords + vec2(1.0, -1.0) * offset) / 16.0);
+}

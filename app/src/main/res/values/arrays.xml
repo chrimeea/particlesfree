@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="pref_predefined_list_titles">
+        <item>Fireworks</item>
+        <item>Electricity</item>
+        <item>Volcano</item>
+        <item>Fire</item>
+        <item>Swarm</item>
+        <item>Sand</item>
+        <item>Sparkle</item>
+        <item>Random values</item>
+    </string-array>
+    <string-array name="pref_predefined_list_values">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+    </string-array>
+    <string-array name="pref_formula_list_titles">
+        <item>Gravitational</item>
+        <item>Elastic</item>
+    </string-array>
+    <string-array name="pref_formula_list_values">
+        <item>0</item>
+        <item>1</item>
+    </string-array>
+    <string-array name="pref_render_list_titles">
+        <item>Particle</item>
+        <item>Contour</item>
+    </string-array>
+    <string-array name="pref_render_list_values">
+        <item>0</item>
+        <item>1</item>
+    </string-array>
+</resources>

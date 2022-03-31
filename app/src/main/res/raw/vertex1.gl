@@ -1,0 +1,11 @@
+uniform mat4 uMVPMatrix;
+uniform vec3 begin, end;
+attribute vec4 position;
+attribute float extra;
+varying vec2 texcoords;
+varying vec4 c;
+void main() {
+    gl_Position = uMVPMatrix * vec4(position.xy, 0.0, 1.0);
+    texcoords = position.zw;
+    c = vec4(begin * (extra * 150.0) + end / (extra * 50.0), 0.5);
+}

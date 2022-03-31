@@ -1,0 +1,7 @@
+precision mediump float;
+uniform sampler2D screentexture;
+uniform float strength;
+varying vec2 texcoords;
+void main() {
+    gl_FragColor = texture2D(screentexture, texcoords) - (1.0 - strength);
+}
